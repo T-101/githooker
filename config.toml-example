@@ -1,0 +1,17 @@
+[repos."my-org/some-app"]
+secret = ""
+branch = "master"
+workdir = "/home/myuser/projects/some-app"
+template = "docker-django-staticfiles"
+template_context = { app_name = "some-app" }
+
+[repos."my-org/custom-app"]
+secret = "NotAVeryGoodSecret"
+branch = "main"
+workdir = "/apps/custom-app"
+commands = [
+    "git pull",
+    "python manage.py migrate",
+    "python manage.py collectstatic --noinput",
+    "sudo systemctl restart gunicorn"
+]

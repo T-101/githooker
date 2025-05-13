@@ -1,0 +1,5 @@
+.idea/
+*.pyc
+config.toml
+githooker.service
+venv/*
