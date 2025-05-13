@@ -59,5 +59,5 @@ async def webhook(request: Request):
         logging.error(e)
         raise HTTPException(status_code=500, detail=f"Deployment failed: {e}")
 
-    logging.info("Deployment succeeded")
+    logging.info(f"Deployment succeeded for repo '{repo_full_name}'")
     return {"status": "Success: deployment triggered"}
