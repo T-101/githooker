@@ -1,16 +1,22 @@
 # GitHooker
 
-GitHooker is a simple service to manage git web hooks. It can run commands base on changes in repository
+Run commands when git webhooks are received
+
+## Features
+- Run commands when git webhooks are received
+- Use Jinja2 command templates for dynamic command generation and repeated tasks
 
 ## Requirements
 
-- Python 3.11+ (Since it uses `tomllib`)
-- Systemd (optional)
+- Python 3.9+ (Might work on earlier, not tested)
+- Systemd
 
 ## Installation
 
 1. Create a virtual environment
-   ```bash python3.11 -m venv venv```
+   ```
+   python3.11 -m venv venv
+   ```
 2. Activate the virtual environment, install the requirements and exit
     ```
     source venv/bin/activate
@@ -26,3 +32,4 @@ GitHooker is a simple service to manage git web hooks. It can run commands base 
     sudo systemctl enable githooker
     sudo systemctl start githooker
     ```
+Logs can be accessed with `sudo journalctl -u githooker`
